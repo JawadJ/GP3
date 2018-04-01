@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 31, 2018 at 05:39 PM
+-- Generation Time: Apr 01, 2018 at 03:41 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -59,7 +59,6 @@ INSERT INTO `delivery` (`DeliveryID`, `DeliveryDate`, `DeliveryVehicleReg`, `Del
 --
 
 CREATE TABLE IF NOT EXISTS `driver` (
-  `DriverID` int(8) NOT NULL,
   `DriverEmployer` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `DriverName` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `DriverTitle` varchar(4) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -70,19 +69,19 @@ CREATE TABLE IF NOT EXISTS `driver` (
 -- Dumping data for table `driver`
 --
 
-INSERT INTO `driver` (`DriverID`, `DriverEmployer`, `DriverName`, `DriverTitle`) VALUES
-(1, 'Brenny Cola', 'Helen Miranda', 'Ms'),
-(2, 'Brenny Cola', 'Dani Marino', 'Mr'),
-(3, 'Micro Zoft', 'Jose Alvez', 'Mr'),
-(4, 'Micro Zoft', 'Maria Partou', 'Ms.'),
-(5, 'Micro Zoft', 'Guy Redmond', 'Dr'),
-(6, 'Food Stuff', 'Vito Gelato', 'Dr'),
-(7, 'Food Stuff', 'David César', 'Mr'),
-(8, 'Food Stuff', 'Lindsay White', 'Ms'),
-(9, 'Muscle Tone', 'David Beckham', 'Mr'),
-(10, 'Uframed', 'Marcos Alves', 'Mr'),
-(11, 'Uframed', 'Fred Bloggs', 'Mr'),
-(12, 'Burger Bits', 'Olenka Sama', 'Ms');
+INSERT INTO `driver` (`DriverEmployer`, `DriverName`, `DriverTitle`) VALUES
+('Brenny Cola', 'Helen Miranda', 'Ms'),
+('Brenny Cola', 'Dani Marino', 'Mr'),
+('Micro Zoft', 'Jose Alvez', 'Mr'),
+('Micro Zoft', 'Maria Partou', 'Ms.'),
+('Micro Zoft', 'Guy Redmond', 'Dr'),
+('Food Stuff', 'Vito Gelato', 'Dr'),
+('Food Stuff', 'David César', 'Mr'),
+('Food Stuff', 'Lindsay White', 'Ms'),
+('Muscle Tone', 'David Beckham', 'Mr'),
+('Uframed', 'Marcos Alves', 'Mr'),
+('Uframed', 'Fred Bloggs', 'Mr'),
+('Burger Bits', 'Olenka Sama', 'Ms');
 
 -- --------------------------------------------------------
 
@@ -104,18 +103,18 @@ CREATE TABLE IF NOT EXISTS `driveridcard` (
 --
 
 INSERT INTO `driveridcard` (`CardID`, `Driver`, `StartDate`, `EndDate`, `State`) VALUES
-(1, 'Lindsay White', '2018-02-21', '2019-03-23', 'Valid'),
-(2, 'Vito Gelato', '2017-11-12', '2018-12-25', 'Valid'),
-(3, 'Dani Marino', '2017-12-18', '2019-01-29', 'Valid'),
-(4, 'Fred Bloggs', '2018-04-23', '2019-06-27', 'Valid'),
-(5, 'David César', '2018-05-12', '2019-07-19', 'Valid'),
-(6, 'Maria Partou', '2018-06-14', '2019-07-23', 'Valid'),
-(7, 'Helen Miranda', '2016-03-28', '2017-08-16', 'Expired'),
-(8, 'Jose Alvez', '2016-05-29', '2019-10-22', 'Cancelled'),
-(9, 'Guy Redmond', '2017-06-06', '2019-08-09', 'Valid'),
-(10, 'David Beckham', '2014-12-09', '2016-11-11', 'Expired'),
-(11, 'Marcos Alves', '2018-01-27', '2019-12-12', 'Valid'),
-(12, 'Olenka Sama', '2016-01-01', '2019-12-31', 'Cancelled ');
+(310, 'Lindsay White', '2018-02-21', '2019-03-23', 'Valid'),
+(311, 'Vito Gelato', '2017-11-12', '2018-12-25', 'Valid'),
+(312, 'Dani Marino', '2017-12-18', '2019-01-29', 'Valid'),
+(313, 'Fred Bloggs', '2018-04-23', '2019-06-27', 'Valid'),
+(314, 'David César', '2018-05-12', '2019-07-19', 'Valid'),
+(315, 'Maria Partou', '2018-06-14', '2019-07-23', 'Valid'),
+(316, 'Helen Miranda', '2016-03-28', '2017-08-16', 'Expired'),
+(317, 'Jose Alvez', '2016-05-29', '2019-10-22', 'Cancelled'),
+(318, 'Guy Redmond', '2017-06-06', '2019-08-09', 'Valid'),
+(319, 'David Beckham', '2014-12-09', '2016-11-11', 'Expired'),
+(320, 'Marcos Alves', '2018-01-27', '2019-12-12', 'Valid'),
+(321, 'Olenka Sama', '2016-01-01', '2019-12-31', 'Cancelled ');
 
 -- --------------------------------------------------------
 
@@ -124,7 +123,6 @@ INSERT INTO `driveridcard` (`CardID`, `Driver`, `StartDate`, `EndDate`, `State`)
 --
 
 CREATE TABLE IF NOT EXISTS `supplier` (
-  `SupplierID` int(8) NOT NULL,
   `SupplierName` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `SupplierGaS` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `SupplierAddress` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -136,13 +134,13 @@ CREATE TABLE IF NOT EXISTS `supplier` (
 -- Dumping data for table `supplier`
 --
 
-INSERT INTO `supplier` (`SupplierID`, `SupplierName`, `SupplierGaS`, `SupplierAddress`, `SupplierManager`) VALUES
-(1, 'Brenny Cola', 'Drinks', 'Balmain', 'Andy Smith'),
-(2, 'Micro Zoft', 'IT Services', 'Balmain', 'Mary Jobs'),
-(3, 'Food Stuff', 'Catering', 'Botany Bay', 'Zoltan Bey'),
-(4, 'Muscle Tone', 'Gym Equiptment', 'Woolwich', 'Mas Mckenzie'),
-(5, 'Uframed', 'CCTV', 'Roseville', 'Jo Reel'),
-(6, 'Burger Bits', 'Catering', 'Woolwich', 'Fred Fats');
+INSERT INTO `supplier` (`SupplierName`, `SupplierGaS`, `SupplierAddress`, `SupplierManager`) VALUES
+('Brenny Cola', 'Drinks', 'Balmain', 'Andy Smith'),
+('Micro Zoft', 'IT Services', 'Balmain', 'Mary Jobs'),
+('Food Stuff', 'Catering', 'Botany Bay', 'Zoltan Bey'),
+('Muscle Tone', 'Gym Equiptment', 'Woolwich', 'Mas Mckenzie'),
+('Uframed', 'CCTV', 'Roseville', 'Jo Reel'),
+('Burger Bits', 'Catering', 'Woolwich', 'Fred Fats');
 
 -- --------------------------------------------------------
 
@@ -181,24 +179,22 @@ INSERT INTO `vehicle` (`VehicleReg`, `VehicleBrand`, `VehicleModel`, `VehicleSup
 --
 
 CREATE TABLE IF NOT EXISTS `venue` (
-  `VenueID` int(8) NOT NULL,
   `VenueStadiumName` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `VenueArea` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `VenueContactNo` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
   `VenueAddress` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`VenueStadiumName`),
-  KEY `Venue ID` (`VenueID`)
+  PRIMARY KEY (`VenueStadiumName`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `venue`
 --
 
-INSERT INTO `venue` (`VenueID`, `VenueStadiumName`, `VenueArea`, `VenueContactNo`, `VenueAddress`) VALUES
-(1, 'Athletic Centre', 'Sidney Olympic Park', '02 9714 750', 'Edwin Flack Avenue'),
-(2, 'Aquatic Centre', 'Sidney Olympic Park', '02 4920 294', 'Olympic Boulevard'),
-(3, 'NSW Golf Course', 'Botany Bay', '02 9661 445', 'Anzac Parade'),
-(4, 'Sailing Centre', 'Sidney Harbour', '04 0483 521', 'Wrights Road');
+INSERT INTO `venue` (`VenueStadiumName`, `VenueArea`, `VenueContactNo`, `VenueAddress`) VALUES
+('Athletic Centre', 'Sidney Olympic Park', '02 9714 750', 'Edwin Flack Avenue'),
+('Aquatic Centre', 'Sidney Olympic Park', '02 4920 294', 'Olympic Boulevard'),
+('NSW Golf Course', 'Botany Bay', '02 9661 445', 'Anzac Parade'),
+('Sailing Centre', 'Sidney Harbour', '04 0483 521', 'Wrights Road');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
