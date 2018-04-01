@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2018 at 03:41 PM
+-- Generation Time: Apr 01, 2018 at 05:35 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -90,31 +90,31 @@ INSERT INTO `driver` (`DriverEmployer`, `DriverName`, `DriverTitle`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `driveridcard` (
-  `CardID` int(8) NOT NULL,
+  `CardID` int(8) NOT NULL AUTO_INCREMENT,
   `Driver` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `StartDate` date NOT NULL,
   `EndDate` date NOT NULL,
-  `State` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `State` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Valid',
   PRIMARY KEY (`CardID`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=658 ;
 
 --
 -- Dumping data for table `driveridcard`
 --
 
 INSERT INTO `driveridcard` (`CardID`, `Driver`, `StartDate`, `EndDate`, `State`) VALUES
-(310, 'Lindsay White', '2018-02-21', '2019-03-23', 'Valid'),
-(311, 'Vito Gelato', '2017-11-12', '2018-12-25', 'Valid'),
-(312, 'Dani Marino', '2017-12-18', '2019-01-29', 'Valid'),
-(313, 'Fred Bloggs', '2018-04-23', '2019-06-27', 'Valid'),
-(314, 'David César', '2018-05-12', '2019-07-19', 'Valid'),
-(315, 'Maria Partou', '2018-06-14', '2019-07-23', 'Valid'),
-(316, 'Helen Miranda', '2016-03-28', '2017-08-16', 'Expired'),
-(317, 'Jose Alvez', '2016-05-29', '2019-10-22', 'Cancelled'),
-(318, 'Guy Redmond', '2017-06-06', '2019-08-09', 'Valid'),
-(319, 'David Beckham', '2014-12-09', '2016-11-11', 'Expired'),
-(320, 'Marcos Alves', '2018-01-27', '2019-12-12', 'Valid'),
-(321, 'Olenka Sama', '2016-01-01', '2019-12-31', 'Cancelled ');
+(635, 'Lindsay White', '2018-02-21', '2019-03-23', 'Valid'),
+(636, 'Vito Gelato', '2017-11-12', '2018-12-25', 'Valid'),
+(637, 'Dani Marino', '2017-12-18', '2019-01-29', 'Valid'),
+(638, 'Fred Bloggs', '2018-04-23', '2019-06-27', 'Valid'),
+(639, 'David César', '2018-05-12', '2019-07-19', 'Valid'),
+(640, 'Maria Partou', '2018-06-14', '2019-07-23', 'Valid'),
+(641, 'Helen Miranda', '2016-03-28', '2017-08-16', 'Expired'),
+(642, 'Jose Alvez', '2016-05-29', '2019-10-22', 'Cancelled'),
+(643, 'Guy Redmond', '2017-06-06', '2019-08-09', 'Valid'),
+(644, 'David Beckham', '2014-12-09', '2016-11-11', 'Expired'),
+(645, 'Marcos Alves', '2018-01-27', '2019-12-12', 'Valid'),
+(646, 'Olenka Sama', '2016-01-01', '2019-12-31', 'Cancelled ');
 
 -- --------------------------------------------------------
 
