@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 01, 2018 at 05:35 PM
+-- Generation Time: Apr 05, 2018 at 11:13 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -28,6 +28,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `delivery` (
   `DeliveryID` int(8) NOT NULL,
+  `Status` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Ongoing',
   `DeliveryDate` date NOT NULL,
   `DeliveryVehicleReg` varchar(8) COLLATE utf8mb4_unicode_ci NOT NULL,
   `DeliveryVenue` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -40,17 +41,17 @@ CREATE TABLE IF NOT EXISTS `delivery` (
 -- Dumping data for table `delivery`
 --
 
-INSERT INTO `delivery` (`DeliveryID`, `DeliveryDate`, `DeliveryVehicleReg`, `DeliveryVenue`, `DeliverySupplier`, `DeliveryDriver`) VALUES
-(1, '2018-10-20', 'D05 RAM', 'Athletic Centre', 'Food Stuff', 'Lindsay White'),
-(2, '2018-10-20', 'E06 ROM', 'Athletic Centre', 'Food Stuff', 'Vito Gelato'),
-(3, '2018-10-20', 'B03 PPD', 'Athletic Centre', 'Brenny Cola', 'Dani Marino'),
-(4, '2018-10-21', 'H09 UML', 'Aquatic Centre', 'Uframed', 'Fred Bloggs'),
-(5, '2018-10-21', 'E06 ROM', 'NSW Golf Course', 'Food Stuff', 'David César'),
-(6, '2018-10-24', 'F07 CPU', 'Sailing Centre', 'Food Stuff', 'David César'),
-(7, '2018-10-20', 'A02 TLC', 'NSW Golf Course', 'Brenny Cola', 'Dani Marino'),
-(8, '2018-10-22', 'D05 RAM', 'Aquatic Centre', 'Brenny Cola', 'Dani Marino'),
-(9, '2018-10-20', 'A02 TLC', 'Athletic Centre', 'Brenny Cola', 'Dani Marino'),
-(10, '2018-10-23', 'C04 DFD', 'Athletic Centre', 'Micro Zoft', 'Maria Partou');
+INSERT INTO `delivery` (`DeliveryID`, `Status`, `DeliveryDate`, `DeliveryVehicleReg`, `DeliveryVenue`, `DeliverySupplier`, `DeliveryDriver`) VALUES
+(1, 'Ongoing', '2018-10-20', 'D05 RAM', 'Athletic Centre', 'Food Stuff', 'Lindsay White'),
+(2, 'Ongoing', '2018-10-20', 'E06 ROM', 'Athletic Centre', 'Food Stuff', 'Vito Gelato'),
+(3, 'Ongoing', '2018-10-20', 'B03 PPD', 'Athletic Centre', 'Brenny Cola', 'Dani Marino'),
+(4, 'Ongoing', '2018-10-21', 'H09 UML', 'Aquatic Centre', 'Uframed', 'Fred Bloggs'),
+(5, 'Ongoing', '2018-10-21', 'E06 ROM', 'NSW Golf Course', 'Food Stuff', 'David César'),
+(6, 'Ongoing', '2018-10-24', 'F07 CPU', 'Sailing Centre', 'Food Stuff', 'David César'),
+(7, 'Ongoing', '2018-10-20', 'A02 TLC', 'NSW Golf Course', 'Brenny Cola', 'Dani Marino'),
+(8, 'Ongoing', '2018-10-22', 'D05 RAM', 'Aquatic Centre', 'Brenny Cola', 'Dani Marino'),
+(9, 'Ongoing', '2018-10-20', 'A02 TLC', 'Athletic Centre', 'Brenny Cola', 'Dani Marino'),
+(10, 'Ongoing', '2018-10-23', 'C04 DFD', 'Athletic Centre', 'Micro Zoft', 'Maria Partou');
 
 -- --------------------------------------------------------
 
@@ -96,7 +97,7 @@ CREATE TABLE IF NOT EXISTS `driveridcard` (
   `EndDate` date NOT NULL,
   `State` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'Valid',
   PRIMARY KEY (`CardID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=658 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=660 ;
 
 --
 -- Dumping data for table `driveridcard`
