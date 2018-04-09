@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2018 at 09:05 PM
+-- Generation Time: Apr 09, 2018 at 11:54 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -106,7 +106,7 @@ CREATE TABLE IF NOT EXISTS `driveridcard` (
 
 INSERT INTO `driveridcard` (`CardID`, `Driver`, `StartDate`, `EndDate`, `State`) VALUES
 (8, '8', '2018-02-21', '2019-03-23', 'Valid'),
-(6, '6', '2017-11-12', '2018-12-25', 'Valid'),
+(6, '6', '2017-11-12', '2018-10-21', 'Valid'),
 (2, '2', '2017-12-18', '2019-01-29', 'Valid'),
 (11, '11', '2018-04-23', '2019-06-27', 'Valid'),
 (7, '7', '2018-05-12', '2019-07-19', 'Valid'),
@@ -117,6 +117,36 @@ INSERT INTO `driveridcard` (`CardID`, `Driver`, `StartDate`, `EndDate`, `State`)
 (9, '9', '2014-12-09', '2016-11-11', 'Expired'),
 (10, '10', '2018-01-27', '2019-12-12', 'Valid'),
 (12, '12', '2016-01-01', '2019-12-31', 'Cancelled ');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `entrylog`
+--
+
+CREATE TABLE IF NOT EXISTS `entrylog` (
+  `EntryID` int(8) NOT NULL AUTO_INCREMENT,
+  `DelVenue` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `DelDate` date NOT NULL,
+  `DelVehicleReg` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
+  `DelDriver` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `Allowed` varchar(7) COLLATE utf8_unicode_ci DEFAULT 'Refused',
+  PRIMARY KEY (`EntryID`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=9 ;
+
+--
+-- Dumping data for table `entrylog`
+--
+
+INSERT INTO `entrylog` (`EntryID`, `DelVenue`, `DelDate`, `DelVehicleReg`, `DelDriver`, `Allowed`) VALUES
+(1, '1', '2018-10-20', '4', '8', 'Granted'),
+(2, '1', '2018-10-20', '5', '6', 'Granted'),
+(3, '4', '2018-10-24', '6', '7', 'Granted'),
+(4, '1', '2018-10-20', '2', '1', 'Refused'),
+(5, '4', '2018-10-24', '5', '7', 'Refused'),
+(6, '1', '2018-10-21', '4', '8', 'Refused'),
+(7, '2', '2018-10-20', '4', '8', 'Refused'),
+(8, '2', '2018-10-22', '4', '6', 'Granted');
 
 -- --------------------------------------------------------
 
