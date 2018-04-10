@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 09, 2018 at 11:54 PM
+-- Generation Time: Apr 10, 2018 at 04:03 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -34,24 +34,26 @@ CREATE TABLE IF NOT EXISTS `delivery` (
   `DeliveryVenue` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `DeliverySupplier` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `DeliveryDriver` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `DeliveryDriverName` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`DeliveryID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=11 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=12 ;
 
 --
 -- Dumping data for table `delivery`
 --
 
-INSERT INTO `delivery` (`DeliveryID`, `Status`, `DeliveryDate`, `DeliveryVehicleReg`, `DeliveryVenue`, `DeliverySupplier`, `DeliveryDriver`) VALUES
-(1, 'Ongoing', '2018-10-20', '4', '1', '3', '8'),
-(2, 'Ongoing', '2018-10-20', '5', '1', '3', '6'),
-(3, 'Ongoing', '2018-10-20', '2', '1', '1', '2'),
-(4, 'Ongoing', '2018-10-21', '8', '2', '5', '11'),
-(5, 'Ongoing', '2018-10-21', '5', '3', '3', '7'),
-(6, 'Ongoing', '2018-10-24', '6', '4', '3', '7'),
-(7, 'Ongoing', '2018-10-20', '1', '3', '1', '2'),
-(8, 'Ongoing', '2018-10-22', '4', '2', '3', '6'),
-(9, 'Ongoing', '2018-10-20', '1', '1', '1', '2'),
-(10, 'Ongoing', '2018-10-23', '3', '1', '2', '4');
+INSERT INTO `delivery` (`DeliveryID`, `Status`, `DeliveryDate`, `DeliveryVehicleReg`, `DeliveryVenue`, `DeliverySupplier`, `DeliveryDriver`, `DeliveryDriverName`) VALUES
+(1, 'Delivered', '2018-10-20', '4', '1', '3', '8', 'Lindsay White'),
+(2, 'Delivered', '2018-10-20', '5', '1', '3', '6', 'Vito Gelato'),
+(3, 'Ongoing', '2018-10-20', '2', '1', '1', '2', 'Dani Marino'),
+(4, 'Ongoing', '2018-10-21', '8', '2', '5', '11', 'Fred Bloggs'),
+(5, 'Ongoing', '2018-10-21', '5', '3', '3', '7', 'David César'),
+(6, 'Delivered', '2018-10-24', '6', '4', '3', '7', 'David César'),
+(7, 'Ongoing', '2018-10-20', '1', '3', '1', '2', 'Dani Marino'),
+(8, 'Delivered', '2018-10-22', '4', '2', '3', '6', 'Vito Gelato'),
+(9, 'Ongoing', '2018-10-20', '1', '1', '1', '2', 'Dani Marino'),
+(10, 'Ongoing', '2018-10-23', '3', '1', '2', '4', 'Maria Partou'),
+(11, 'Cancelled', '2018-04-11', '1', '2', '1', '1', 'Helen Miranda');
 
 -- --------------------------------------------------------
 
@@ -65,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `driver` (
   `DriverEmployer` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `DriverTitle` varchar(4) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`DriverID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=19 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `driver`
@@ -98,7 +100,7 @@ CREATE TABLE IF NOT EXISTS `driveridcard` (
   `EndDate` date NOT NULL,
   `State` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Valid',
   PRIMARY KEY (`CardID`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=650 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `driveridcard`
