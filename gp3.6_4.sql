@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2018 at 04:03 PM
+-- Generation Time: Apr 10, 2018 at 06:30 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -43,17 +43,17 @@ CREATE TABLE IF NOT EXISTS `delivery` (
 --
 
 INSERT INTO `delivery` (`DeliveryID`, `Status`, `DeliveryDate`, `DeliveryVehicleReg`, `DeliveryVenue`, `DeliverySupplier`, `DeliveryDriver`, `DeliveryDriverName`) VALUES
-(1, 'Delivered', '2018-10-20', '4', '1', '3', '8', 'Lindsay White'),
-(2, 'Delivered', '2018-10-20', '5', '1', '3', '6', 'Vito Gelato'),
-(3, 'Ongoing', '2018-10-20', '2', '1', '1', '2', 'Dani Marino'),
-(4, 'Ongoing', '2018-10-21', '8', '2', '5', '11', 'Fred Bloggs'),
-(5, 'Ongoing', '2018-10-21', '5', '3', '3', '7', 'David César'),
-(6, 'Delivered', '2018-10-24', '6', '4', '3', '7', 'David César'),
-(7, 'Ongoing', '2018-10-20', '1', '3', '1', '2', 'Dani Marino'),
-(8, 'Delivered', '2018-10-22', '4', '2', '3', '6', 'Vito Gelato'),
-(9, 'Ongoing', '2018-10-20', '1', '1', '1', '2', 'Dani Marino'),
-(10, 'Ongoing', '2018-10-23', '3', '1', '2', '4', 'Maria Partou'),
-(11, 'Cancelled', '2018-04-11', '1', '2', '1', '1', 'Helen Miranda');
+(1, 'Delivered', '2018-10-20', '4', '1', '3', '8', '8'),
+(2, 'Delivered', '2018-10-20', '5', '1', '3', '6', '6'),
+(3, 'Ongoing', '2018-10-20', '2', '1', '1', '2', '2'),
+(4, 'Ongoing', '2018-10-21', '8', '2', '5', '11', '11'),
+(5, 'Ongoing', '2018-10-21', '5', '3', '3', '7', '7'),
+(6, 'Delivered', '2018-10-24', '6', '4', '3', '7', '7'),
+(7, 'Ongoing', '2018-10-20', '1', '3', '1', '2', '2'),
+(8, 'Delivered', '2018-10-22', '4', '2', '3', '6', '6'),
+(9, 'Ongoing', '2018-10-20', '1', '1', '1', '2', '2'),
+(10, 'Ongoing', '2018-10-23', '3', '1', '2', '4', '4'),
+(11, 'Cancelled', '2018-04-11', '1', '2', '1', '1', '1');
 
 -- --------------------------------------------------------
 
@@ -96,6 +96,7 @@ INSERT INTO `driver` (`DriverID`, `DriverName`, `DriverEmployer`, `DriverTitle`)
 CREATE TABLE IF NOT EXISTS `driveridcard` (
   `CardID` int(8) NOT NULL AUTO_INCREMENT,
   `Driver` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `CardEmp` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `StartDate` date NOT NULL,
   `EndDate` date NOT NULL,
   `State` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT 'Valid',
@@ -106,19 +107,19 @@ CREATE TABLE IF NOT EXISTS `driveridcard` (
 -- Dumping data for table `driveridcard`
 --
 
-INSERT INTO `driveridcard` (`CardID`, `Driver`, `StartDate`, `EndDate`, `State`) VALUES
-(8, '8', '2018-02-21', '2019-03-23', 'Valid'),
-(6, '6', '2017-11-12', '2018-10-21', 'Valid'),
-(2, '2', '2017-12-18', '2019-01-29', 'Valid'),
-(11, '11', '2018-04-23', '2019-06-27', 'Valid'),
-(7, '7', '2018-05-12', '2019-07-19', 'Valid'),
-(4, '4', '2018-06-14', '2019-07-23', 'Valid'),
-(1, '1', '2016-03-28', '2017-08-16', 'Expired'),
-(3, '3', '2016-05-29', '2019-10-22', 'Cancelled'),
-(5, '5', '2017-06-06', '2019-08-09', 'Valid'),
-(9, '9', '2014-12-09', '2016-11-11', 'Expired'),
-(10, '10', '2018-01-27', '2019-12-12', 'Valid'),
-(12, '12', '2016-01-01', '2019-12-31', 'Cancelled ');
+INSERT INTO `driveridcard` (`CardID`, `Driver`, `CardEmp`, `StartDate`, `EndDate`, `State`) VALUES
+(8, '8', '3', '2018-02-21', '2019-03-23', 'Valid'),
+(6, '6', '3', '2017-11-12', '2018-10-21', 'Valid'),
+(2, '2', '1', '2017-12-18', '2019-01-29', 'Valid'),
+(11, '11', '5', '2018-04-23', '2019-06-27', 'Valid'),
+(7, '7', '3', '2018-05-12', '2019-07-19', 'Valid'),
+(4, '4', '2', '2018-06-14', '2019-07-23', 'Valid'),
+(1, '1', '1', '2016-03-28', '2017-08-16', 'Expired'),
+(3, '3', '2', '2016-05-29', '2019-10-22', 'Cancelled'),
+(5, '5', '2', '2017-06-06', '2019-08-09', 'Valid'),
+(9, '9', '4', '2014-12-09', '2016-11-11', 'Expired'),
+(10, '10', '5', '2018-01-27', '2019-12-12', 'Valid'),
+(12, '12', '6', '2016-01-01', '2019-12-31', 'Cancelled ');
 
 -- --------------------------------------------------------
 
