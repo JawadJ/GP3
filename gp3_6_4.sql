@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2018 at 01:51 PM
+-- Generation Time: Apr 11, 2018 at 02:18 PM
 -- Server version: 5.6.15-log
 -- PHP Version: 5.5.8
 
@@ -65,7 +65,8 @@ CREATE TABLE IF NOT EXISTS `driver` (
   `DriverName` varchar(60) COLLATE utf8mb4_unicode_ci NOT NULL,
   `DriverEmployer` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `DriverTitle` varchar(4) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`DriverID`)
+  PRIMARY KEY (`DriverID`),
+  UNIQUE KEY `DriverName` (`DriverName`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=13 ;
 
 --
@@ -162,7 +163,8 @@ CREATE TABLE IF NOT EXISTS `supplier` (
   `SupplierGaS` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `SupplierAddress` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `SupplierManager` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`SupplierID`)
+  PRIMARY KEY (`SupplierID`),
+  UNIQUE KEY `SupplierName` (`SupplierName`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=7 ;
 
 --
@@ -189,7 +191,8 @@ CREATE TABLE IF NOT EXISTS `vehicle` (
   `VehicleBrand` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `VehicleModel` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `VehicleSupplier` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`VehicleID`)
+  PRIMARY KEY (`VehicleID`),
+  UNIQUE KEY `VehicleReg` (`VehicleReg`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=10 ;
 
 --
@@ -219,7 +222,8 @@ CREATE TABLE IF NOT EXISTS `venue` (
   `VenueArea` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `VenueContactNo` varchar(11) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `VenueAddress` varchar(60) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`VenueID`)
+  PRIMARY KEY (`VenueID`),
+  UNIQUE KEY `VenueStadiumName` (`VenueStadiumName`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=5 ;
 
 --
